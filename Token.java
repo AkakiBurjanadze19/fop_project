@@ -1,3 +1,4 @@
+
         public class Token {
         public static final String IDENTIFIER = "IDENTIFIER";
         public static final String NUMBER = "NUMBER";
