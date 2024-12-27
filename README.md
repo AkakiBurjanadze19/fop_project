@@ -19,8 +19,8 @@ These are constants representing different token types.
 
 ### fields
 ```Java
-  private String type;
-  private String value;
+  private final String type;
+  private final String value;
 ```
 These are the instance variables of the Token class, where type represents the category of the token and value is the actual string content of the token.
 
