@@ -1,5 +1,9 @@
 # Ruby Interpreter
 
+## Team Members
+1) Akaki Burjanadze - Lead
+2) Temo Danelia - Collaborator
+
 ## Description
 This is a simple interpreter implemented in Java which translates and executes Ruby code.
 
@@ -10,9 +14,5 @@ This is the list of language constructs which our interpreter supports:
 * Arithmetic Operations (+, -, *, /, %)
 * Conditional Statements (if, else)
 * Iterative control flow
-
-## Team Members
-1) Akaki Burjanadze - Lead
-2) Temo Danelia - Collaborator
-
+* 
 ## How to run the project
