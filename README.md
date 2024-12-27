@@ -1,7 +1,15 @@
 # Ruby Interpreter
 
 ## Description
-Simple interpreter which translates and executes Ruby code
+This is a simple interpreter implemented in Java which translates and executes Ruby code.
+
+## Language Constructs
+This is the list of language constructs which our interpreter supports:
+
+* Variable assignment
+* Arithmetic Operations (+, -, *, /, %)
+* Conditional Statements (if, else)
+* Iterative control flow
 
 ## Team Members
 1) Akaki Burjanadze - Lead
