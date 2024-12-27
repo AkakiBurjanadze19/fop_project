@@ -1,4 +1,4 @@
-# Ruby Interpreter
+# Token Data Structure
 
 ## Description
-Simple interpreter which translates and executes Ruby code
+Token class is used to represent tokens. For example: identifiers and numbers.
