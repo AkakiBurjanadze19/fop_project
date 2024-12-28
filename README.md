@@ -66,7 +66,7 @@ We use Token class to represent different types of tokens in our interpreter.
   new Token(Token.EOF, ""); // new Token("EOF", "")
 ```
 
-For example if we have name = "john" in Ruby:
+For example if we have ```Ruby name = "john"``` in Ruby:
 ```Java
   new Token(Token.IDENTIFIER, "name") // new Token("IDENTIFIER, "name")
   new Token(Token.OPERATOR, "=") // new Token("OPERATOR, "=")
