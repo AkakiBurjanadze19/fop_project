@@ -1,6 +1,6 @@
+package interpretercomponents;
 
-
-        public class Token {
+public class Token {
         public static final String IDENTIFIER = "IDENTIFIER";
         public static final String NUMBER = "NUMBER";
         public static final String STRING = "STRING";
