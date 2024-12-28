@@ -1,4 +1,5 @@
 
+
         public class Token {
         public static final String IDENTIFIER = "IDENTIFIER";
         public static final String NUMBER = "NUMBER";
@@ -28,6 +29,7 @@
             public String toString() {
                 return "Token{" + "type='" + type + '\'' + ", value='" + value + '\'' + '}';
             }
-            
+
+
 }
 
