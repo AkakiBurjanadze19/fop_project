@@ -52,3 +52,24 @@ These getter methods are used to get type/value of the token.
   }
 ```
 This `toString` method from `Object` is defined for debugging purposes. specifically to print type and value of the token.
+
+### Examples
+We use Token class to represent different types of tokens in our interpreter.  
+
+```Java
+  new Token(Token.IDENTIFIER, "x") -> new Token("IDENTIFIER, "x")
+  new Token(Token.NUMBER, "12") -> new Token("NUMBER", "12")
+  new Token(Token.STRING, "hello") -> new Token("STRING", "hello")
+  new Token(Token.KEYWORD, "if") -> new Token("KEYWORD", "if")
+  new Token(Token.OPERATOR, "=") -> new Token("OPERATOR", "=")
+  new Token(Token.DELIMITER, "(") -> new Token("DELIMITER, "(")
+  new Token(Token.EOF, "") -> new Token("EOF", "")
+```
+
+For example if we have name = "john" in Ruby:
+```Java
+  new Token(Token.IDENTIFIER, "name") -> new Token("IDENTIFIER, "name")
+  new Token(Token.OPERATOR, "=") -> new Token("OPERATOR, "=")
+  new Token(Token.STRING, "john") -> new Token("STRING", "john")
+```
+We will have three tokens: `name`, `=` and `john`.
