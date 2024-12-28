@@ -1,4 +1,5 @@
-import javax.naming.Name;
+package interpretercomponents;
+
 import java.util.HashMap;
 import java.util.Map;
 
