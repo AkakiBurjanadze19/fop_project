@@ -9,6 +9,9 @@ public class Token {
     public static final String DELIMETER = "DELIMETER";
     public static final String EOF = "EOF";
 
+    private final String type;
+    private final String value;
+
     // constructor which initializes token type and value
     public Token(String type, String value) {
         this.type = type;
