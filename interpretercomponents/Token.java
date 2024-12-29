@@ -1,16 +1,16 @@
 package interpretercomponents;
 
 public class Token {
-    public static final String IDENTIFIER = "IDENTIFIER";
-    public static final String NUMBER = "NUMBER";
-    public static final String STRING = "STRING";
-    public static final String KEYWORD = "KEYWORD";
-    public static final String OPERATOR = "OPERATOR";
-    public static final String DELIMETER = "DELIMETER";
-    public static final String EOF = "EOF";
+    public static final String IDENTIFIER = "IDENTIFIER"; // for variable names
+    public static final String NUMBER = "NUMBER"; // for numbers like "12"
+    public static final String STRING = "STRING"; // for strings like "hello"
+    public static final String KEYWORD = "KEYWORD"; // for reserved keywords like if
+    public static final String OPERATOR = "OPERATOR"; // for operators like =
+    public static final String DELIMITER = "DELIMITER"; // for delimiters like '('
+    public static final String EOF = "EOF"; // end of the file
 
-    private final String type;
-    private final String value;
+    private final String type; // for token type
+    private final String value; // for token value
 
     // constructor which initializes token type and value
     public Token(String type, String value) {
