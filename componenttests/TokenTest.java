@@ -1,10 +1,9 @@
 package componenttests;
-import interpretercomponents.Token;
-import interpretercomponents.VariableStorage;
 
-public class TestComponents {
-    public static void main(String[] args){
-        /* testing different token types */
+import interpretercomponents.Token;
+
+public class TokenTest {
+    public static void main (String[] args){
         System.out.println("Token structures: ");
         System.out.println(new Token(Token.IDENTIFIER, "x"));
         System.out.println(new Token(Token.NUMBER, "8"));
@@ -56,18 +55,5 @@ public class TestComponents {
         System.out.println(delimiterToken.getType() + " : " + delimiterToken.getValue());
         System.out.println(eofToken.getType() + " : " + eofToken.getValue());
 
-
-        VariableStorage variables1 = new VariableStorage();
-        variables1.PutVariable("x",7);
-        variables1.PutVariable("user","gela");
-        int number =  (int) variables1.getVariable("x");
-        String name = (String) variables1.getVariable("user");
-        System.out.println("number: " + number );
-        System.out.println("name: "+ name);
-
-
-
-
     }
-
 }
