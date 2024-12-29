@@ -4,18 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tokenizer {
-    private String input;
-    private int pos;
+    private String input; // the input string which will be tokenized
+    private int pos; // current position in a string
 
+    // constructor which initializes input and current position in a string by 0 as default
     public Tokenizer(String input) {
         this.input = input;
         this.pos = 0;
     }
 
+    /* returns the list of tokens */
+    /* identifies: */
+    // operator tokens
+    // numeric tokens
+    // identifier tokens
+    // string tokens
     public List<Token> tokenize() {
-        List<Token> tokens = new ArrayList<>();
+        List<Token> tokens = new ArrayList<>(); // this list stores the generated tokens
 
+        // iterate through the whole input string
         while (this.pos < this.input.length()) {
+            // grab the current character
             char current = this.input.charAt(this.pos);
 
             // handle whitespaces
@@ -24,6 +33,7 @@ public class Tokenizer {
                 continue;
             }
 
+            // handle newlines
             if (current == '\n') {
                 this.pos++;
                 continue;
@@ -83,10 +93,13 @@ public class Tokenizer {
             throw new IllegalArgumentException("No such character: " + current);
         }
 
+        // mark end of the file
         tokens.add(new Token(Token.EOF, ""));
+        // return the generated tokens
         return tokens;
     }
 
+    // this boolean method checks if the given value is a keyword
     public boolean isKeyword(String value) {
         return value.equals("if") || value.equals("else") || value.equals("end") || value.equals("while") || value.equals("puts");
     }
