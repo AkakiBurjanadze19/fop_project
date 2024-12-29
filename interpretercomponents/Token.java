@@ -6,7 +6,7 @@ public class Token {
         public static final String STRING = "STRING";
         public static final String KEYWORD = "KEYWORD";
         public static final String OPERATOR = "OPERATOR";
-        public static final String DELIMETER = "DELIMETER";
+        public static final String DELIMITER = "DELIMITER";
         public static final String EOF = "EOF";
 
         private final String type;
@@ -18,18 +18,15 @@ public class Token {
         }
 
         public String getType() {
-                return this.type;
-            }
+            return this.type;
+        }
 
 
-            public String getValue() {
-                return this.value;
-            }
+        public String getValue() {
+            return this.value;
+        }
 
-            public String toString() {
-                return "Token{" + "type='" + type + '\'' + ", value='" + value + '\'' + '}';
-            }
-
-
+        public String toString() {
+            return "Token{" + "type='" + type + '\'' + ", value='" + value + '\'' + '}';
+        }
 }
-
