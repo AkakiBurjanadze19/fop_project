@@ -39,6 +39,7 @@ public class Tokenizer {
                 continue;
             }
 
+            // collect multi-character operators
             if (this.pos + 1 < this.input.length()) {
                 List<String> multiCharOperators = List.of("!=", "==", "<=", ">=");
                 String twoCharOp = this.input.substring(this.pos, this.pos + 2);
@@ -49,6 +50,7 @@ public class Tokenizer {
                 }
             }
 
+            // collect delimiters like block and parentheses
             if ("{};()".indexOf(current) >= 0) {
                 tokens.add(new Token(Token.DELIMITER, String.valueOf(current)));
                 this.pos++;
@@ -110,6 +112,6 @@ public class Tokenizer {
 
     // this boolean method checks if the given value is a keyword
     private boolean isKeyword(String value) {
-        return value.equals("if") || value.equals("else") || value.equals("end") || value.equals("while") || value.equals("puts");
+        return value.equals("if") || value.equals("else") || value.equals("end") || value.equals("while") || value.equals("puts") || value.equals("break");
     }
 }
