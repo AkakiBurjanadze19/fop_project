@@ -15,7 +15,7 @@ Following language constructs were used for testing the interpreter.
 ```Java
  StringBuilder string = new StringBuilder();
  string.append("puts 2 + 3");
- string.append("puts 100 / 20);
+ string.append("puts 100 / 20");
 
  String code = string.toString();
 
