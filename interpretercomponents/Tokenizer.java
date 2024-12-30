@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tokenizer {
-    private String input; // the input string which will be tokenized
+    private final String input; // the input string which will be tokenized
     private int pos; // current position in a string
 
     // constructor which initializes input and current position in a string by 0 as default
@@ -39,18 +39,24 @@ public class Tokenizer {
                 continue;
             }
 
-            // handle multi-character operators
             if (this.pos + 1 < this.input.length()) {
+                List<String> multiCharOperators = List.of("!=", "==", "<=", ">=");
                 String twoCharOp = this.input.substring(this.pos, this.pos + 2);
-                if ("!= == <= >=".contains(twoCharOp)) {
+                if (multiCharOperators.contains(twoCharOp)) {
                     tokens.add(new Token(Token.OPERATOR, twoCharOp));
                     this.pos += 2;
                     continue;
                 }
             }
 
+            if ("{};()".indexOf(current) >= 0) {
+                tokens.add(new Token(Token.DELIMITER, String.valueOf(current)));
+                this.pos++;
+                continue;
+            }
+
             // handle single-character operators
-            if ("+-/*%{};()<>".indexOf(current) >= 0) {
+            if ("=+-/*%<>".indexOf(current) >= 0) {
                 tokens.add(new Token(Token.OPERATOR, String.valueOf(current)));
                 this.pos++;
                 continue;
@@ -69,7 +75,7 @@ public class Tokenizer {
             // collect identifier tokens
             if (Character.isLetter(current)) {
                 StringBuilder identifier = new StringBuilder();
-                while (this.pos < this.input.length() && Character.isLetterOrDigit(this.input.charAt(pos)) || this.input.charAt(this.pos) == '_') {
+                while (this.pos < this.input.length() && (Character.isLetterOrDigit(this.input.charAt(pos)) || this.input.charAt(this.pos) == '_')) {
                     identifier.append(this.input.charAt(this.pos++));
                 }
                 String value = identifier.toString();
@@ -84,6 +90,9 @@ public class Tokenizer {
                 StringBuilder string = new StringBuilder();
                 while (this.pos < this.input.length() && this.input.charAt(this.pos) != '"') {
                     string.append(this.input.charAt(this.pos++));
+                }
+                if (this.pos >= this.input.length() || this.input.charAt(this.pos) != '"') {
+                    throw new IllegalArgumentException("Unterminated string literal");
                 }
                 this.pos++;
                 tokens.add(new Token(Token.STRING, string.toString()));
@@ -100,7 +109,7 @@ public class Tokenizer {
     }
 
     // this boolean method checks if the given value is a keyword
-    public boolean isKeyword(String value) {
+    private boolean isKeyword(String value) {
         return value.equals("if") || value.equals("else") || value.equals("end") || value.equals("while") || value.equals("puts");
     }
 }
