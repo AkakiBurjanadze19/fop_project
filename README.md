@@ -1,18 +1,18 @@
-# Token Data Structure
+# Interpreter Fix
 
-## Team Members
-1) Akaki Burjanadze - Lead
-2) Temo Danelia - Collaborator
+## Description
+I fixed some operations of the interpeter itself and for the tokenizer as well. Mainly i added support for the `break` statement in while loops and modified collecting token behavior in the tokenizer so that it now identifies break statements and collects them into a tokens list as well.
 
-This is a simple interpreter implemented in Java which translates and executes Ruby code.
-
-## Language Constructs
-This is the list of language constructs which our interpreter supports:
-
-* Variable assignment
-* Arithmetic Operations (+, -, *, /, %)
-* Conditional Statements (if, else)
-* Iterative control flow
-* 
-## How to run the project
-
+### simple code example
+break statement which breaks out of the while loop (basically terminates the loop execution)
+```Java
+ String string = new StringBuilder();
+ string.append("x = 0\n");
+ string.append("while x < 5 {\n");
+ string.append(" puts x\n");
+ string.append(" x = x + 1\n");
+ string.append("if x > 3 {\n");
+ string.append(" break\n");
+ string.append(" }");
+ string.append("}");
+```
