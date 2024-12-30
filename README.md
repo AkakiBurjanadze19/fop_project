@@ -15,4 +15,8 @@ break statement which breaks out of the while loop (basically terminates the loo
  string.append(" break\n");
  string.append(" }");
  string.append("}");
+
+ String code = string.toString();
+ Interpreter interpreter = new Interpreter(code);
+ interpreter.execute();
 ```
