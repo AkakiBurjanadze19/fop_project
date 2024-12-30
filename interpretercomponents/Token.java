@@ -8,6 +8,7 @@ public class Token {
     public static final String OPERATOR = "OPERATOR"; // for operators like =
     public static final String DELIMITER = "DELIMITER"; // for delimiters like '('
     public static final String EOF = "EOF"; // end of the file
+    public static final String END = "end";
 
     private final String type; // for token type
     private final String value; // for token value
