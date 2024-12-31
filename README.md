@@ -7,6 +7,7 @@ This Tokenizer class implements `tokenize` method which is kind of a main method
 ### constructor
 `Tokenizer(String input)` - constructor for the tokenizer class 
 `input` - input string to be tokenized
+#### process
 sets the `input` field to the provided string and initializes the `pos` field to 0 marking the beginning of the string to tokenize.
 
 ## methods
