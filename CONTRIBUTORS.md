@@ -3,7 +3,7 @@
 2. Temo Danelia - Collaborator
 
 ## description
-For productivity reasons we split the tasks. One person was responsible for designing (writing) code for different components for the interpreter and onther person was responsible for writing tests for those components and for the algorithms which were tested using the interpreter. 
+For productivity reasons we split the tasks. One person was responsible for designing (writing) code for different components for the interpreter and another person was responsible for writing tests for those components and for the algorithms which were tested using the interpreter. 
 
 ## Akaki Burjanadze
 Worked on the main components of the interpreter.
