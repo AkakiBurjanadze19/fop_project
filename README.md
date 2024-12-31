@@ -11,5 +11,5 @@ This Tokenizer class implements `tokenize` method which is kind of a main method
 sets the `input` field to the provided string and initializes the `pos` field to 0 marking the beginning of the string to tokenize.
 
 ## methods
-`public List<Token> tokenize()` - tokenizes the input string into a list of `Token` objects
-`isKeyword(String value)` - checks if a given string is a reserved keyword. For example `if`.
+* `public List<Token> tokenize()` - tokenizes the input string into a list of `Token` objects
+* `isKeyword(String value)` - checks if a given string is a reserved keyword. For example `if`.
