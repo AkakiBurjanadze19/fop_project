@@ -18,10 +18,16 @@ This is the list of language constructs which our interpreter supports:
 ## inside an interpreter
 Our interpreter doesn't support multi-token expressions, it only supports single-token expression which means that you need to write each statements separately to ensure that it correctly translates and executes the specified code. Also for simplification our interpreter supports `{}` so called curly braces. This is not a feature for Ruby but to note again this was done for simplification and our interpreter executes `Ruby-like` code snippets. For booleans we use `0` and `1`, obviously 0 means false and 1 means true.
 What i mean when i say `multi-token` and `single-token` expressions?
-For example when you write while loop like this `while x * x <= n` it will not work.
+For example when you write while loop like this:
+```
+ while x * x <= n
+```
+it will not work.
 To ensure that it works correctly you need to split statements:
-`line1`: `temp = x * x`
-`line2`: `while temp <= n` do something...
+```
+line1: `temp = x * x`
+line2: `while temp <= n` do something...
+```
 This will work fine.
 
 ## example code snippets
