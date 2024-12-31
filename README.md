@@ -51,11 +51,17 @@ This will work fine.
  x = 10
  y = 5
 
- puts x + y
- puts x - y
- puts x * y
- puts x / y
- puts x % y
+ addition = x + y
+ subtraction = x - y
+ multiplication = x * y
+ division = x / y
+ remainder = x % y
+
+ puts addition
+ puts subtraction
+ puts multiplication
+ puts division
+ puts remainder
 ```
 ### evaluating conditional statements
 ```
