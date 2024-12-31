@@ -124,8 +124,9 @@ first of all make sure that on your computer you have have installed `Java` and 
 * Go to the project repository in GitHub and copy the repo url which can be found under the green `code` button.
 * After copying the repistory url, open the terminal again and type `git clone {repository_url}`. `{repository_url}` must be the actual repository url
 * After cloning the repository, change directory to the cloned project by typing `cd {cloned_project}`. `{cloned_project}` must be the actual cloned project directory
-* Now when you are inside the cloned project, change directory to `interpretercomponents` by typing `cd interpretercomponents` and compile everything there by running `javac {.java file}`.
-* Now change directory to `algorithmstests` by running `cd..` and then by running `cd algorithmstests` and compile everything there as well by executing `javac {.java file}`. This will create bytecode executable files
-* After compiling Java classes in the `algorithmstests` package you can run the actual code now by typing `java {bytecode_executable_file}`
+* When you are inside the cloned project, compile everything in the `interpretercomponents` by typing `javac interpretercomponents/*.java`
+* After compiling everything inside `interpretercomponents` compile some algoritm test file in `algorithmstests`. For example type `javac -cp . algorithmstests/Sum.java` and it will compile Sum class.
+* Finally you can type `java -cp . algorithmstests.Sum`. It will run the actual code and you will see the result.
+* Follow the same process for other algorithm test files 
 
 Alternatively you can run the code without doing all of these. For example if you are using `IntellJ IDE` just clone the repository and then open it by the IDE. Build the project and run the specific code.
