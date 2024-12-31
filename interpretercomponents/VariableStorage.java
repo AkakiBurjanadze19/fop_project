@@ -9,6 +9,10 @@ public class VariableStorage {
 
     // define a method which will be used to put variables into a variables map
     public void PutVariable(String name, Object value) {
+        if (value instanceof Integer) {
+            value = (int) value;
+        }
+
         variables.put(name, value);
     }
 

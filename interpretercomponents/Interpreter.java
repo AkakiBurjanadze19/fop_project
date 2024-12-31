@@ -24,11 +24,17 @@ public class Interpreter {
 
     // get current token without advancing to the next one
     private Token getCurrentToken() {
+        if (this.currentTokenIndex > this.tokens.size()) {
+            throw new IndexOutOfBoundsException("Attempted to access token beyond end of input");
+        }
         return this.tokens.get(this.currentTokenIndex);
     }
 
     // advance to the next token and return the current one
     private Token getNextToken() {
+        if (this.currentTokenIndex > this.tokens.size()) {
+            throw new IndexOutOfBoundsException("Attempted to access token beyond end of input");
+        }
         return this.tokens.get(this.currentTokenIndex++);
     }
 
@@ -114,10 +120,10 @@ public class Interpreter {
         boolean conditionMet = (int) condition != 0;
         if (conditionMet) {
             // execute the block if the condition is true
-            executeBlock();
+            this.executeBlock();
         } else {
             // skip the block if the condition is false
-            skipBlock();
+            this.skipBlock();
         }
 
         // check for the else block
@@ -133,14 +139,14 @@ public class Interpreter {
                 // execute else block only if the condition was not met
                 if (!conditionMet) {
                     // execute else block
-                    executeBlock();
+                    this.executeBlock();
                 } else {
                     // skip the else block
-                    skipBlock();
+                    this.skipBlock();
                 }
             } else {
                 // handle a single statement after else
-                executeStatement();
+                this.executeStatement();
             }
         }
     }
@@ -208,6 +214,10 @@ public class Interpreter {
 
     // skip a block of code without executing it
     private void skipBlock() {
+        if (this.currentTokenIndex >= this.tokens.size()) {
+            throw new IllegalStateException("Unmatched opening brace or malformed block structure.");
+        }
+
         // start with one open brace
         int openBraces = 1;
         // skip the initial opening curly brace
@@ -245,6 +255,9 @@ public class Interpreter {
             // handle variable references
         } else if (token.getType().equals(Token.IDENTIFIER)) {
             result = variables.getVariable(token.getValue());
+            if (result == null) {
+                throw new IllegalArgumentException("Undefined variable: " + token.getValue());
+            }
         } else {
             // handle unexpected tokens in expression
             throw new IllegalArgumentException("Unexpected token in expression: " + token);
@@ -286,8 +299,10 @@ public class Interpreter {
                 case "+":
                     if (result instanceof Integer && nextValue instanceof Integer) {
                         result = (int) result + (int) nextValue;
-                    } else {
+                    } else if (result instanceof String || nextValue instanceof String) {
                         result = result.toString() + nextValue.toString();
+                    } else {
+                        throw new IllegalArgumentException("Invalid types for addition");
                     }
                     break;
                 // handle subtraction operation
