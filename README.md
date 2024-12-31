@@ -33,9 +33,9 @@ This will work fine.
 ## example code snippets
 ### printing
 ```
-  puts 10
-  puts 20
-  puts 10 + 20
+ puts 10
+ puts 20
+ puts 10 + 20
 ```
 
 ### variable assignments and printing
