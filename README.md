@@ -1,18 +1,4 @@
-# Token Data Structure
+# Tests for different algorithms
 
-## Team Members
-1) Akaki Burjanadze - Lead
-2) Temo Danelia - Collaborator
-
-This is a simple interpreter implemented in Java which translates and executes Ruby code.
-
-## Language Constructs
-This is the list of language constructs which our interpreter supports:
-
-* Variable assignment
-* Arithmetic Operations (+, -, *, /, %)
-* Conditional Statements (if, else)
-* Iterative control flow
-* 
-## How to run the project
-
+## Description
+Some tests were added for different algorithms. By running these tests we ensure that our interpreter correctly handles translation and execution of different code scripts.
